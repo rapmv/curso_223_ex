@@ -3,7 +3,6 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.stream.Collectors;
 
 import entities.Product;
 import model.services.ProductService;
@@ -22,7 +21,7 @@ public class Program {
 		
 		ProductService ps = new ProductService();
 		
-		double sum = ps.filteredSum(list);
+		double sum = ps.filteredSum(list, p-> p.getName().charAt(0)=='M');
 		System.out.println("Sum = " + String.format("%.2f",sum));
 
 
